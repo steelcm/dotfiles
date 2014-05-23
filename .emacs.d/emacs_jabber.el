@@ -18,3 +18,5 @@
     `(jabber-mode-line-mode t)
     `(jabber-show-offline-contacts nil)
 )
+;; message alerts
+(add-hook 'jabber-alert-message-hooks 'jabber-message-xmessage)
