@@ -7,6 +7,8 @@
 (defvar my-packages '(
     evil
     jabber
+    restclient
+    json-reformat
 ) "A list of packages to be installed on emacs launch.")
 
 (unless package-archive-contents (package-refresh-contents))
