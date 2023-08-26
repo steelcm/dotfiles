@@ -21,11 +21,11 @@ ZSH_THEME="dracula"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -71,10 +71,10 @@ ZSH_THEME="dracula"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-zsh-syntax-highlighting
-zsh-autosuggestions
-fzf-zsh-plugin
+# git
+zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+fzf-zsh-plugin # https://github.com/unixorn/fzf-zsh-plugin
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,7 +106,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvim="~/Applications/squashfs-root/usr/bin/nvim"
 alias emacs="emacs -nw"
 alias lg="lazygit"
 alias ssh="kitty +kitten ssh"
@@ -115,16 +114,8 @@ alias jsarraysearch="jq -r '(map(keys) | add | unique) as \$cols | map(. as \$ro
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-# bitwarden session ID
-export BW_SESSION="bk7KL8c3nw4IVcK0Wja8RRhm12e2WBuld3bEmbIdYs6roreF7lWB+3aNLDKjUjMBntfYym4rXvG7mNt1SpG9pQ=="
-
-# pnpm
-export PNPM_HOME="/home/chris/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # exports
 export PYTHON="/usr/local/bin/python2.7"
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
