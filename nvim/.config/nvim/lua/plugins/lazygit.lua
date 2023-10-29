@@ -1,7 +1,8 @@
+-- https://github.com/kdheepak/lazygit.nvim
 return {
     'kdheepak/lazygit.nvim',
-    keys = { { '<leader>sc', desc = 'Git', mode = 'n' } },
+    keys = { { '<leader>lg', desc = 'Git', mode = 'n' } },
     config = function()
-        vim.keymap.set('n', '<leader>sc', ':LazyGit<CR>', { desc = '[S]ource [C]ontrol' })
+        vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>', { desc = '[S]ource [C]ontrol' })
     end,
 }
