@@ -13,5 +13,5 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set('n', '<leader> ', ':Lazy<cr>', { desc = 'Open lazy UI' })
+vim.keymap.set('n', '<leader>l', ':Lazy<cr>', { desc = 'Open lazy UI' })
 require('lazy').setup('plugins')
