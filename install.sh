@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
 STOW_FOLDERS="nvim,zsh,kitty"
 DOT_FILES=$HOME/.dotfiles
