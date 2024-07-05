@@ -7,6 +7,10 @@ return {
     },
     config = function()
         require('nvim-treesitter.configs').setup({
+            modules = {},
+            ignore_install = {
+                'sql',
+            },
             ensure_installed = {
                 'bash',
                 'html',
@@ -34,7 +38,7 @@ return {
             indent = { enable = true },
             enable = true,
             incremental_selection = {
-                enable = true,
+                enable = false,
                 keymaps = {
                     init_selection = '<C-space>',
                     node_incremental = '<C-space>',

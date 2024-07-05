@@ -17,6 +17,13 @@ local on_attach = function(_, bufnr)
 
     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    nmap('<leader>cj', function()
+        vim.diagnostic.goto_next()
+    end, 'GoTo next [C]ode action')
+    nmap('<leader>ck', function()
+        vim.diagnostic.goto_prev()
+    end, 'GoTo previous [C]ode action')
+    -- nmap('<leader>dk', vim.diagnostic.goto_prev(), 'GoTo previous [C]ode action')
 
     nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
     nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
