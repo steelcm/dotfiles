@@ -121,3 +121,11 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="/usr/local/opt/python@3.11/libexec/bin":"/home/chris/.local/share/bob/nvim-bin":$PATH
+# Add cargo bin folder
+export PATH="$PATH:$CARGO_HOME/bin"
+
+
+alias vw='NVIM_APPNAME=nvim-writer nvim'
+
+# show calendar when starting terminal/tab
+cal -A 2 && icalBuddy -f -npn -nc -iep "title,datetime" -ps "| : |" -po "datetime,title" -tf "" -df "%a, %d %b @ %I:%M %p" -eed -nrd eventsToday+14
