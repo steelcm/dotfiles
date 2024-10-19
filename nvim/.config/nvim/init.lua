@@ -1,6 +1,5 @@
 require('options')
 require('packages')
-require('lsp-config')
 require('keymaps')
 
 -- Highlight Yanks
