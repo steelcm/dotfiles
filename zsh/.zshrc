@@ -109,7 +109,8 @@ fi
 alias emacs="emacs -nw"
 alias lg="lazygit"
 alias ssh="kitty +kitten ssh"
-alias ll="exa -l --icons -a"
+alias ll="EXA_ICON_SPACING=2 exa -l --icons -a"
+alias cursor="/opt/cursor.AppImage"
 alias jsarraysearch="jq -r '(map(keys) | add | unique) as \$cols | map(. as \$row | \$cols | map(\$row[.])) as \$rows | \$cols, \$rows[] | @csv' | fzf"
 # alias pbcopy='xclip -selection clipboard'
 # alias pbpaste='xclip -selection clipboard -o'
@@ -117,7 +118,19 @@ alias jsarraysearch="jq -r '(map(keys) | add | unique) as \$cols | map(. as \$ro
 # exports
 export PYTHON="/usr/local/bin/python2.7"
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="/usr/local/opt/python@3.11/libexec/bin":"/home/chris/.local/share/bob/nvim-bin":$PATH
+
+# pnpm
+export PNPM_HOME="/home/chris/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH=$HOME/.local/bin:$PATH
