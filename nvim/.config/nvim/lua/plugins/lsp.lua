@@ -109,7 +109,7 @@ return {
 				vim.keymap.set('n', '<leader>pd', vim.diagnostic.goto_prev, { desc = '[P]rev [D]iagnostic', buffer = args.buf })
 				vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = '[G]o to [T]ype definition', buffer = args.buf })
 				vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]ename', buffer = args.buf })
-				vim.keymap.set('n', '<leader>fo', vim.lsp.buf.format, { desc = '[F]ormat', buffer = args.buf })
+				-- vim.keymap.set('n', '<leader>fo', vim.lsp.buf.format, { desc = '[F]ormat', buffer = args.buf })
 				vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction', buffer = args.buf })
 			end,
 		})
