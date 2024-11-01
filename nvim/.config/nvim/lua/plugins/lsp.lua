@@ -102,6 +102,7 @@ return {
 		vim.api.nvim_create_autocmd('LspAttach', {
 			desc = 'LSP actions',
 			callback = function(args)
+				vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, { desc = '[S]ignature Help', buffer = args.buf })
 				vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover', buffer = args.buf })
 				vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition', buffer = args.buf })
 				vim.keymap.set('n', 'gh', vim.diagnostic.open_float, { desc = '[O]pen [D]iagnostics', buffer = args.buf })
