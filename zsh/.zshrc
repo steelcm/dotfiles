@@ -72,7 +72,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 # git
-zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+# zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
 zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
 fzf-zsh-plugin # https://github.com/unixorn/fzf-zsh-plugin
 )
@@ -104,6 +104,7 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias ec="nvim ~/.dotfiles"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias emacs="emacs -nw"
@@ -123,9 +124,13 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/python@3.11/libexec/bin":"/home/chris/.local/share/bob/nvim-bin":$PATH
 # Add cargo bin folder
 export PATH="$PATH:$CARGO_HOME/bin"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 
 alias vw='NVIM_APPNAME=nvim-writer nvim'
+alias docker-compose='docker compose'
+
+alias f="cd ~ && cd \$(find ~/Code -type d -maxdepth 2 -exec test -e '{}'/.git -a -e \; -print | fzf)"
 
 # show calendar when starting terminal/tab
-cal -A 2 && icalBuddy -f -npn -nc -iep "title,datetime" -ps "| : |" -po "datetime,title" -tf "" -df "%a, %d %b @ %I:%M %p" -eed -nrd eventsToday+14
+# cal -A 2 && icalBuddy -f -npn -nc -iep "title,datetime" -ps "| : |" -po "datetime,title" -tf "" -df "%a, %d %b @ %I:%M %p" -eed -nrd eventsToday+14
