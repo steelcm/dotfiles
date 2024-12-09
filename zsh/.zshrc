@@ -148,3 +148,22 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH=$HOME/.local/bin:$PATH
+
+cc() {
+    local fd_options fzf_options target
+
+    fd_options=(
+        --type directory
+    )
+
+    fzf_options=(
+        --no-multi
+        --preview='tree -L 1 {}'
+        --bind=ctrl-space:toggle-preview
+        --exit-0
+    )
+
+    target="$(fd . "${1:-.}" "${fd_options[@]}" | fzf "${fzf_options[@]}")"
+
+    cd "$target" || return 1
+}
